@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": ["Bash(*)", "Bash(python*)", "Bash(git*)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import sys, subprocess, json; data=json.load(sys.stdin); path=data.get('tool_input',{}).get('file_path',''); subprocess.run(['black', path]) if path.endswith('.py') else None\""
+          }
+        ]
+      }
+    ]
+  }
+}
