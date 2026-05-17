@@ -4,7 +4,11 @@
       "WebSearch",
       "Bash(ls [0-9]*)",
       "Bash(wait)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "WebFetch(domain:docs.polymarket.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(*)",
+      "WebFetch(domain:medium.com)"
     ]
   }
 }
